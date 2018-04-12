@@ -2,6 +2,7 @@ int heater = 4;
 int pinA0 = pinA0;
 int current = 0;
 int adc;
+double temperature;
 // the setup routine runs once when you press reset:
 void setup() {
   // declare pin 9 to be an output:
@@ -27,10 +28,12 @@ void loop() {
       case 2:
         Serial.println('2');
         current = 3;
+        digitalWrite(heater,ON);
         break;
       case 3:
         Serial.println('3');
         current = 4;
+        digitalWrite(heater,OFF);
         break;
       case 4:
         Serial.println('4');
@@ -41,3 +44,25 @@ void loop() {
   Serial.println("Here");
   delay(1000);
 }
+
+void calibration(int adc) {
+  
+}
+
+void adcToTemp(int adc) {
+  
+}
+
+void boundCheck(double Temperature) {
+  
+}
+
+void heaterON() {
+  digitalWrite(heater, HIGH);
+}
+
+void heaterOFF() {
+  digitalWrite(heater, LOW);
+}
+
+
